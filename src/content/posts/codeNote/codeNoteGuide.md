@@ -4,7 +4,7 @@ published: 2026-02-07
 tags: [Coding, Notes]
 category: 程式雜記
 description: 這份筆記記錄下我寫程式的時候的感想，寫下那些踩過的坑避免之後又踩到。
-draft: true
+draft: false
 ---
 
 # 這份筆記的理念

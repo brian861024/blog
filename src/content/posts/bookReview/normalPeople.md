@@ -4,7 +4,7 @@ published: 2026-02-07
 tags: [BookReview, 小說]
 category: 讀書心得
 image: ./normalPeople.jpg
-draft: true
+draft: false
 ---
 <hr>
 
