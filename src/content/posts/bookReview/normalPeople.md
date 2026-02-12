@@ -1,6 +1,6 @@
 ---
 title: "《正常人》 Normal People - 好立體的愛情故事"
-published: 2026-02-07
+published: 2026-02-06
 tags: [BookReview, 小說]
 category: 讀書心得
 image: ./normalPeople.jpg

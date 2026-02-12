@@ -55,7 +55,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Brian Chen",
-	bio: "28y, 桃園, 男",
+	bio: "1997, 桃園, 男",
 	links: [
 		// {
 		// 	name: "Twitter",
