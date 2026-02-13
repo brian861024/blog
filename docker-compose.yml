@@ -1,0 +1,16 @@
+services:
+  astro:
+    image: node:20-alpine
+    working_dir: /app
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: >
+      sh -c "
+      corepack enable &&
+      corepack prepare pnpm@latest --activate &&
+      pnpm install &&
+      pnpm dev --host 0.0.0.0
+      "
