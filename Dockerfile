@@ -1,15 +1,19 @@
 # --- Build Stage ---
 FROM node:20-alpine AS builder
 WORKDIR /app
+
 COPY package*.json ./
 RUN corepack enable && corepack prepare pnpm@9.14.4 --activate
 RUN pnpm install
+
 COPY . .
 RUN pnpm build
 
+
 # --- Production Stage ---
 FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/templates/default.conf.template
+
+EXPOSE 8080
