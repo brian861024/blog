@@ -8,13 +8,8 @@ COPY . .
 RUN pnpm build
 
 # --- Production Stage ---
-FROM node:20-alpine AS production
-WORKDIR /app
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-RUN corepack enable && corepack prepare pnpm@9.14.4 --activate
-
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package*.json ./
-
-EXPOSE 4321
-CMD ["pnpm", "preview", "--host", "0.0.0.0"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
